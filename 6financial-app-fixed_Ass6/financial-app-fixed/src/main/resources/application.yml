@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: financial-app
+  profiles:
+    default: dev
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+external:
+  service:
+    payment-url: https://default-payment-service.example.com/api
+    audit-url: https://default-audit-service.example.com/api
+
+logging:
+  level:
+    root: INFO
+    com.example.financialapp: INFO

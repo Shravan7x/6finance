@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/financialdb
+    driver-class-name: org.postgresql.Driver
+    username: prod_user
+    password: prod_password
+
+logging:
+  level:
+    root: ERROR
+    com.example.financialapp: INFO
+
+external:
+  service:
+    payment-url: https://payment.financial.com/api
+    audit-url: https://audit.financial.com/api
