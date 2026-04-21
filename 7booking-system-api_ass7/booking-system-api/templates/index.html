@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Booking System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Online Booking System</h1>
+      <p>Book, modify, cancel, and view reservations with a REST API backend.</p>
+    </header>
+
+    <section class="card">
+      <h2>Create Reservation</h2>
+      <form id="bookingForm">
+        <div class="grid">
+          <input type="text" id="customerName" placeholder="Customer Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <select id="service" required>
+            <option value="">Select Service</option>
+            <option value="Hotel Room">Hotel Room</option>
+            <option value="Conference Hall">Conference Hall</option>
+            <option value="Spa Session">Spa Session</option>
+          </select>
+          <input type="date" id="reservationDate" required />
+          <select id="startTime" required>
+            <option value="">Select Time Slot</option>
+            <option>09:00</option>
+            <option>10:00</option>
+            <option>11:00</option>
+            <option>12:00</option>
+            <option>14:00</option>
+            <option>15:00</option>
+            <option>16:00</option>
+            <option>17:00</option>
+          </select>
+          <input type="number" id="guests" min="1" placeholder="Guests" required />
+        </div>
+        <textarea id="notes" placeholder="Notes (optional)"></textarea>
+        <div class="actions">
+          <button type="submit">Book Now</button>
+          <button type="button" class="secondary" id="checkAvailabilityBtn">Check Availability</button>
+        </div>
+      </form>
+      <div id="message"></div>
+      <div id="availabilityResult"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>Reservations</h2>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Guests</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="reservationTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

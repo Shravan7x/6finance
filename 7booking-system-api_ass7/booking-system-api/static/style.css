@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+header h1 {
+  margin-bottom: 8px;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+input, select, textarea, button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+}
+textarea {
+  margin-top: 12px;
+  min-height: 90px;
+  resize: vertical;
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+button.secondary {
+  background: #6b7280;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+#message, #availabilityResult {
+  margin-top: 14px;
+  font-weight: 600;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+th, td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+.status-confirmed { color: #15803d; font-weight: 700; }
+.status-cancelled { color: #b91c1c; font-weight: 700; }
+.action-btn {
+  margin-right: 6px;
+  padding: 8px 10px;
+  width: auto;
+  font-size: 12px;
+}
+.action-btn.edit { background: #0f766e; }
+.action-btn.cancel { background: #dc2626; }
+.action-btn.delete { background: #4b5563; }
+.table-wrap { overflow-x: auto; }
